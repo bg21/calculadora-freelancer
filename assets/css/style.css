@@ -1,0 +1,228 @@
+/* Paleta de cores */
+:root {
+  --primary-color: #6B58D6;   /* Azul mais claro e sofisticado */
+  --primary-dark: #7e69f0;    /* Azul mais escuro e elegante para hover */
+  --secondary-color: #50E3C2; /* Verde suave */
+  --success-color: #F5A623;   /* Amarelo suave para sucesso */
+  --error-color: #f23f87;     /* Vermelho suave para erro */
+  --light-bg: #F1F1F1;        /* Fundo claro */
+  --dark-bg: #222222;         /* Cor de fundo escuro */
+  --text-dark: #222222;       /* Texto escuro */
+  --text-light: #727272;      /* Texto claro */
+  --white: #FFFFFF;           /* Cor branca */
+  --shadow-light: rgba(0, 0, 0, 0.1); /* Sombras claras */
+  --shadow-dark: rgba(0, 0, 0, 0.3);  /* Sombras escuras */
+}
+
+/* Estilização do body */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+}
+
+/* Estilização do header */
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--primary-dark);
+}
+
+header h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+header p {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+/* Estilo principal do conteúdo */
+main {
+  padding: 30px;
+}
+
+/* Estilos das seções */
+section {
+  margin-bottom: 50px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* Containers */
+.containers {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-light);
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+/* Estilização de campos de formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+input {
+  font-size: 16px;
+}
+
+/* Estilo do botão principal */
+.btn-primary {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo das caixas de resultado */
+.result-box {
+  background-color: #e9f7fe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+  border: 2px solid var(--primary-color);
+  margin-top: 15px;
+}
+
+.result-box h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.result-box .result-value {
+  font-size: 32px;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Estilização do footer */
+footer {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Estilo dos ícones nos inputs */
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+}
+
+.input-icon input {
+  padding-left: 35px;
+}
+
+.input-icon span {
+  padding-left: 35px;
+  display: block;
+}
+
+.form-error-message {
+  color: #e74c3c; /* Vermelho mais suave */
+  font-size: 14px; /* Tamanho de fonte ligeiramente maior */
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #f7958a; /* Borda vermelha mais suave */
+  border-radius: 4px; /* Borda arredondada */
+  background-color: rgba(231, 76, 60, 0.1); /* Fundo suave em tom de vermelho */
+  display: none; /* Mantém oculto até ser necessário */
+  font-family: Arial, sans-serif; /* Fonte legível */
+}
+
+.form-error-message::before {
+  content: "⚠️ "; /* Ícone de alerta */
+  font-size: 16px;
+}
+
+
+/* Estilo da caixa de resultado com animação */
+.result-value {
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.result-value.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Foco em botões e inputs */
+button:focus, input:focus {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* Botão desabilitado */
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button, .result-box {
+  transition: all 0.3s ease;
+}
+
+/* Estilo responsivo */
+@media (max-width: 576px) {
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
